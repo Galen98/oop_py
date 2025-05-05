@@ -16,6 +16,10 @@ while True:
         perpus.tambah_buku()
     elif pilihan == "2":
         perpus.tampil_buku()
+    elif pilihan == "3":
+        perpus.edit_buku()
+    elif pilihan == "4":
+        perpus.hapus_buku()
     elif pilihan == "6":
         perpus.simpan()
         print("keluar dari program")

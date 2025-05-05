@@ -36,3 +36,26 @@ class Perpustakaan:
             print(f"{i}. ", end="")
             buku.tampil()
         print()
+
+    def hapus_buku(self):
+        judul = input("masukan judul yang akan dihapus: ")
+        awal = len(self.daftar_buku)
+        self.daftar_buku = [b for b in self.daftar_buku if b.judul != judul]
+        if len(self.daftar_buku) < awal:
+            print("buku berhasil dihapus")
+        else:
+            print("buku tidak ditemukan")
+
+    def edit_buku(self):
+        judul = input("masukan judul yang mau diedit: ")
+        for buku in self.daftar_buku:
+            if buku.judul == judul:
+                new_judul = input("masukan judul baru: ")
+                new_penulis = input("masukan nama penulis baru: ")
+                if new_judul:
+                    buku.judul = new_judul
+                if new_penulis:
+                    buku.penulis = new_penulis
+                print("data buku berhasil dirubah")
+                return
+        print("judul tidak ditemukan")
